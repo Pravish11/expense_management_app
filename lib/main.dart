@@ -1,3 +1,4 @@
+import 'package:expense_management_app/routes/route_name.dart';
 import 'package:flutter/material.dart';
 import 'provider/theme_provider.dart';
 
@@ -12,15 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Expense Manager',
       themeMode: ThemeMode.system,
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      //   useMaterial3: true,
-      // ),
       theme: MyThemes(context).lightTheme,
       darkTheme: MyThemes(context).darkTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: RouteName.initialRoute,
+      onGenerateRoute: RouteName.generateRoute,
       debugShowCheckedModeBanner: false,
     );
   }
